@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Pessoa</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <main class="conteudo">
+        <div class="principal">
+            <div class="titulo">
+                <img src="/img/user-interface.svg" alt="" width="44" height="44">
+                <h1>Insira os dados</h1>
+            </div>
+            <form id="novoItem" class="adicionar" action="">
+                <div class="teste">
+                    <input type="text" name="nome" id="nome" required>
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="teste">
+                    <input type="text" name="sobrenome" id="sobrenome" required>
+                    <label for="sobrenome">Sobrenome</label>
+                </div>
+                <div class="teste">
+                    <input type="text" name="cpf" id="cpf" required>
+                    <label for="cpf">CPF</label>
+                </div>
+                <button type="submit" class="cadastrar" id="atualizar" value="ADICIONAR">Adicionar</button>
+            </form>
+        </div>
+        
+        <ul class="lista" id="lista">
+            
+        </ul>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

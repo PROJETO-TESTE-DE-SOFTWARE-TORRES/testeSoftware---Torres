@@ -1,0 +1,143 @@
+body{
+    background-image: url("/testeSoftware/testeSoftware---Torres/img/janko-sebok-2COrlBb8KyQ-unsplash\ 1.png");
+    background-size: cover;
+    box-sizing: border-box;
+    height: 97vh;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal{
+    background-color: #fff;
+    width: 450px;
+    height: 320px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+}
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo h1{
+    font: 300 1.6rem "Poppins", sans-serif;
+    padding: 4px 12px;
+    color: #151515;
+}
+
+.adicionar{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.teste{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.teste label{
+    font: 400 .9rem "Poppins", sans-serif;
+    color: #777;
+    position: absolute;
+    left: 32px;
+    padding: 4px;
+    background-color: #FFF;
+    transition: all .2s ease-in-out;
+    cursor: text;
+    top: 5px;
+}
+
+.teste input{
+    outline: none;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #CCC;
+    width: 160px;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: all .2s;
+    width: 90%;
+    font: 300 1.2rem "roboto", sans-serif;
+}
+
+.teste input:focus,
+.teste input:valid{
+    border: 1px solid #151515;
+}
+
+.teste input:focus ~ label,
+.teste input:valid ~ label{
+    transform: translateY(-16px);
+    background-color: #fff;
+    font-size: .6rem;
+    padding: 4px 4px; 
+}
+
+.cadastrar{
+    font: 300 1.1rem "Poppins", sans-serif;
+    background-color: #FFF;
+    border: 1px solid #151515;
+    color: #151515;
+    cursor: pointer;
+    padding: 4px;
+    text-transform: uppercase;
+    width: 60%;
+    transition: all .3s ease;
+    margin: 0 auto;
+}
+
+.cadastrar:hover{
+    width: 90%;
+    color: #FFF;
+    background-color: #151515;
+}
+
+.lista {
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 16px;
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.item {
+    background-color: #FFF;
+    font: 300 1rem "Poppins", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.item li {
+    display: flex;
+    gap: 32px;
+}
+
+.item button{
+    background-color: #ce3b3b;
+    border: none;
+    color: #FFF;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 28px;
+    font: 500 1rem "Poppins", sans-serif;
+}
+
