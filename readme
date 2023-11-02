@@ -1,9 +1,8 @@
 # como instalar o selenium
 
-# comandos
-npm install mocha
-npm install selenium-webdriver
+# npm install mocha
+# npm install selenium-webdriver
 
 
 # como rodar o builder no test
-npx test
+# npx mocha test.js
