@@ -1,5 +1,5 @@
 body{
-    background-image: url("/testeSoftware/testeSoftware---Torres/img/janko-sebok-2COrlBb8KyQ-unsplash\ 1.png");
+    background-image: url("/img/janko-sebok-2COrlBb8KyQ-unsplash\ 1.png");
     background-size: cover;
     box-sizing: border-box;
     height: 97vh;
@@ -107,7 +107,7 @@ body{
 }
 
 .lista {
-    width: 450px;
+    width: 500px;
     margin: 0 auto;
     margin-top: 16px;
     list-style: none;
@@ -115,6 +115,7 @@ body{
     display: flex;
     gap: 12px;
     flex-direction: column;
+    text-align: center;
 }
 
 .item {
@@ -132,12 +133,21 @@ body{
 }
 
 .item button{
-    background-color: #ce3b3b;
     border: none;
     color: #FFF;
     border-radius: 6px;
     cursor: pointer;
-    width: 28px;
+    width: 56px;
+    height: 40px;
     font: 500 1rem "Poppins", sans-serif;
+    margin: 4px;
+}
+
+.botaoAltera {
+    background-color: #151515;
+}
+
+.botaoDeleta {
+    background-color: #ce3b3b;
 }
 

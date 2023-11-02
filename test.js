@@ -7,12 +7,12 @@ describe('Teste com Selenium', function () {
 
   before(async function () {
     this.timeout(10000); // timeout para pagina nao fechar
-    driver = await new Builder().forBrowser('firefox').build();
+    driver = await new Builder().forBrowser('chrome').build();
   });
 
   it('Adicionar ao cadastro', async function () {
     this.timeout(30000);
-    await driver.get('file:///Users/lucasgaion/Desktop/testeSoftware/index.html'); //mudar aqui com base do caminho do testesoftware com pwd da para ver
+    await driver.get('file:///C:/Users/adm/OneDrive/Desktop/projeto/testeSoftware---Torres/index.html'); //mudar aqui com base do caminho do testesoftware com pwd da para ver
  
     // estao os xpath de nome, sobrenome, cpf e submit(atualizar)
     const nomeInput = await driver.wait(until.elementLocated(By.xpath('//*[@id="nome"]'), 10000));

@@ -30,9 +30,15 @@ form.addEventListener('submit', (evento) => {
     } else {
         itemAtual.id = itens[itens.length -1] ? (itens[itens.length -1]).id + 1 : 0;
         
-        criaElemento(itemAtual);
-
-        itens.push(itemAtual);
+        const index = document.getElementById('nome').dataset.index;
+        if(index == 'new') {
+            itemAtual.id = itens[itens.length -1] ? (itens[itens.length -1]).id + 1 : 0;
+            criaElemento(itemAtual); 
+            itens.push(itemAtual);
+        } else {
+            editaElemento(index, itemAtual);
+            atualizaElemento(itemAtual);
+        }
     }
 
     localStorage.setItem('itens', JSON.stringify(itens));
@@ -50,7 +56,6 @@ function criaElemento(item) {
 
     const numeroItem = document.createElement('strong');
     numeroItem.dataset.id = item.id;
-    // numeroItem.innerHTML = item.sobrenome;
 
     novoItem.appendChild(numeroItem);
     novoItem.innerHTML += 'Nome: ' + item.nome + ', '; 
@@ -58,17 +63,22 @@ function criaElemento(item) {
     novoItem.innerHTML += 'CPF: ' + item.cpf + ' ';
 
     novoItem.appendChild(botaoDelete(item.id));
+    novoItem.appendChild(botaoEdit(item.id));
     
     lista.appendChild(novoItem);
 
 };
 
 function atualizaElemento(item) {
-    document.querySelector("[data-id='"+item.id+"']").innerHTML = item.sobrenome;
+    const elemento = document.querySelector("[data-id='"+item.id+"']");
+    if (elemento) {
+        elemento.innerHTML = 'Nome: ' + item.nome + ', Sobrenome: ' + item.sobrenome + ', CPF: ' + item.cpf;
+    }
 }
 
 function botaoDelete(id) {
     const elementoBotao = document.createElement('button');
+    elementoBotao.classList.add('botaoDeleta');
     elementoBotao.innerText = "X";
 
     elementoBotao.addEventListener('click', function() {
@@ -84,4 +94,40 @@ function deletaElemento(tag, id) {
     itens.splice(itens.findIndex(elemento => elemento.id === id), 1);
 
     localStorage.setItem('itens', JSON.stringify(itens));
+}
+
+function botaoEdit(id) {
+    const elementoBotao = document.createElement('button');
+    elementoBotao.classList.add('botaoAltera');
+    elementoBotao.innerText = "Editar";
+
+    elementoBotao.addEventListener('click', function() {
+        edita(id);
+    });
+
+    return elementoBotao;
+}
+
+function edita(id) {
+    const pessoa = itens.find(elemento => elemento.id === id);
+    preencherCampos(pessoa);
+}
+
+function editaElemento(id, dados) {
+    const dadosSalvos = JSON.parse(localStorage.getItem('itens'));
+    
+    dadosSalvos[id] = dados;
+
+    localStorage.setItem('itens', JSON.stringify(dadosSalvos));
+}
+
+function preencherCampos(pessoa) {
+    const nomeInput = document.querySelector('#nome');
+    const sobrenomeInput = document.querySelector('#sobrenome');
+    const cpfInput = document.querySelector('#cpf');
+    const dataId = document.querySelector('#nome').dataset.index = pessoa.id;
+
+    nomeInput.value = pessoa.nome;
+    sobrenomeInput.value = pessoa.sobrenome;
+    cpfInput.value = pessoa.cpf;
 }
