@@ -36,7 +36,7 @@ describe('Teste com Selenium', function () {
                 '12345901'
                 ];
 
-    for (let i = 0; i < nomes.length; i++) { // for percorrendo e inserindo os nomes, quando inseri dar um clear
+    for (let i = 0; i < nomes.length; i++) { // for percorrendo e inserindo os nomes, quando inseri dar um clear inseri de novo
       
       await nomeInput.clear();
       await sobrenomeInput.clear();
