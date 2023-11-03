@@ -70,11 +70,12 @@ function criaElemento(item) {
 };
 
 function atualizaElemento(item) {
-    const elemento = document.querySelector("[data-id='"+item.id+"']");
+    const elemento = document.querySelector("[data-id='" + item.id + "']");
     if (elemento) {
         elemento.innerHTML = 'Nome: ' + item.nome + ', Sobrenome: ' + item.sobrenome + ', CPF: ' + item.cpf;
     }
 }
+
 
 function botaoDelete(id) {
     const elementoBotao = document.createElement('button');
@@ -101,7 +102,7 @@ function botaoEdit(id) {
     elementoBotao.classList.add('botaoAltera');
     elementoBotao.innerText = "Editar";
 
-    elementoBotao.addEventListener('click', function() {
+    elementoBotao.addEventListener('click', function () {
         edita(id);
     });
 
@@ -111,11 +112,12 @@ function botaoEdit(id) {
 function edita(id) {
     const pessoa = itens.find(elemento => elemento.id === id);
     preencherCampos(pessoa);
+    form.dataset.index = id; // Defina um identificador para o formulário
 }
 
 function editaElemento(id, dados) {
     const dadosSalvos = JSON.parse(localStorage.getItem('itens'));
-    
+
     dadosSalvos[id] = dados;
 
     localStorage.setItem('itens', JSON.stringify(dadosSalvos));
@@ -125,9 +127,25 @@ function preencherCampos(pessoa) {
     const nomeInput = document.querySelector('#nome');
     const sobrenomeInput = document.querySelector('#sobrenome');
     const cpfInput = document.querySelector('#cpf');
-    const dataId = document.querySelector('#nome').dataset.index = pessoa.id;
 
     nomeInput.value = pessoa.nome;
     sobrenomeInput.value = pessoa.sobrenome;
     cpfInput.value = pessoa.cpf;
+}
+
+function atualizaItemNaLista(item) {
+    const elemento = document.querySelector("[data-id='" + item.id + "']");
+    if (elemento) {
+        elemento.innerHTML = 'Nome: ' + item.nome + ', Sobrenome: ' + item.sobrenome + ', CPF: ' + item.cpf;
+    }
+}
+
+function limpaCamposDoFormulario() {
+    const nomeInput = document.querySelector('#nome');
+    const sobrenomeInput = document.querySelector('#sobrenome');
+    const cpfInput = document.querySelector('#cpf');
+
+    nomeInput.value = '';
+    sobrenomeInput.value = '';
+    cpfInput.value = '';
 }
