@@ -70,12 +70,11 @@ function criaElemento(item) {
 };
 
 function atualizaElemento(item) {
-    const elemento = document.querySelector("[data-id='" + item.id + "']");
+    const elemento = document.querySelector("[data-id='"+item.id+"']");
     if (elemento) {
         elemento.innerHTML = 'Nome: ' + item.nome + ', Sobrenome: ' + item.sobrenome + ', CPF: ' + item.cpf;
     }
 }
-
 
 function botaoDelete(id) {
     const elementoBotao = document.createElement('button');
